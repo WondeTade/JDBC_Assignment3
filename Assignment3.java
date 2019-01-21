@@ -31,8 +31,8 @@ public class Assignment3 {
         
         //Execute SQL Query
         
-        ResultSet res = statement.executeQuery("select * from people join cars "
-                                         + "on people.person_id = cars.car_id");
+        ResultSet res = statement.executeQuery("select * from people join owners join cars \n" +
+"    on owners.person_id = people.person_id && owners.car_id = cars.car_id;");
         
         //Process ResultSet
         while(res.next()){
